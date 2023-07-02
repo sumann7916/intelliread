@@ -3,8 +3,16 @@
   "description": "Sample Extension using Svelte and Tailwind",
   "version": "1.0",
   "manifest_version": 3,
+  "background": {
+    "service_worker": "src/background/background.ts"
+  },
+  "content_scripts": [
+    {
+      "js": ["src/scripts/content.ts"]
+    }
+  ],
   "action": {
     "default_popup": "src/popup/index.html"
   },
-  "permissions": ["storage"]
+  "permissions": ["activeTab", "scripting"]
 }
